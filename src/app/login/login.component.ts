@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { RouterModule , Router} from '@angular/router';
 import { UserService } from '../shared/services/user.service';
+import { profile } from 'console';
 
 
 
@@ -34,6 +35,14 @@ export class LoginComponent implements OnInit {
       for(var user of users){
         //se ele escrito certinho ai ele faz esses coisinho
         if(user.login == this.loginForm.value['login'] && user.password == this.loginForm.value['senha']){
+          
+          let userData = {
+            login: user.login,
+            profile: user.profile
+          } 
+
+          localStorage.setItem('userData', JSON.stringify(userData));
+
           window.alert('Bem vindo!')
           this.router.navigate(['/home'])
           return
@@ -49,7 +58,6 @@ export class LoginComponent implements OnInit {
 
   frigetPass(){
     window.alert('Página em construção')
-    this.router.navigate(['/login'])
   }
 
 }
