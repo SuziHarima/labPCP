@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
           } 
 
           localStorage.setItem('userData', JSON.stringify(userData));
-
           window.alert('Bem vindo!')
           this.router.navigate(['/home'])
           return

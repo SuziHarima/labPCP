@@ -1,16 +1,31 @@
-<div id="menu-lateral">
-    <button (click)="logout()">Logout</button>
 
-    <section>
-        <button (click)="sendHome()">Início</button>
-        <button (click)="sendDocente()">Cadastro de Docente</button> adm
-        <button (click)="sendAluno()">Cadastro de Aluno</button> adm
-        <button (click)="sendTurma()">Cadastro de Turma</button> adm e Docentes
-        <button (click)="sendAvaliacao()">Cadastro de Avaliação</button> adm e Docente
-        <button (click)="sendDocenteList()">Listagem de Docentes</button> aluno
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="menu-lateral">
+    <button id="toogler" (click)="sideBar()"> <i class="fa-solid fa-bars"></i></button>
+
+    <section id="nav">
+
+        
+        <button (click)="sendHome()"> <i class="fa-solid fa-house"></i> Início</button>
+        <ng-template [ngIf]="adminVerification()">
+        <button (click)="sendDocente()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Docente</button> 
+        <button (click)="sendAluno()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Aluno</button>   
+        </ng-template>
+        <ng-template [ngIf]="adminDocenteVerification()">
+        <button (click)="sendTurma()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Turma</button> 
+        <button (click)="sendAvaliacao()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Avaliação</button> 
+        </ng-template>
+        <ng-template [ngIf]="adminVerification()">
+        <button (click)="sendDocenteList()"> <i class="fa-solid fa-clipboard"></i> Listagem de Docentes</button>
+        </ng-template> 
+        <ng-template [ngIf]="alunoVerification()">
         <button (click)="sendNotas()">Notas</button>
+        </ng-template>
+       
     </section>
 
-    <!-- botão para recolher e expandir o menu -->
-    <button></button>
+    <button (click)="logout()" id="logout"> <i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+
 </div>
