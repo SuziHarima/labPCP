@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -12,8 +13,7 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class MenuLateralComponent {
 
-  constructor(private router: Router, private elementRef: ElementRef) {
-    this.adminVerification()
+  constructor(private router: Router, private elementRef: ElementRef, private userService: UserService) {
   }
 
   logout(){
@@ -49,31 +49,16 @@ export class MenuLateralComponent {
     this.router.navigate(['/notas'])
   }
 
-  adminVerification(): boolean {
-    let loggedUser = JSON.parse(localStorage.getItem("userData")!);
-    console.log(loggedUser.profile)
-    if(loggedUser.profile == 'admin') {
-      return true
-    } 
-    return false
+  admin(){
+    return this.userService.verifyProfile('admin')
   }
 
-  adminDocenteVerification(): boolean {
-    let loggedUser = JSON.parse(localStorage.getItem("userData")!);
-    console.log(loggedUser.profile)
-    if(loggedUser.profile == 'admin' || loggedUser.profile == 'docente') {
-      return true
-    } 
-    return false
+  adminDocente(){
+    return this.userService.adminDocenteVerification()
   }
 
-  alunoVerification(): boolean {
-    let loggedUser = JSON.parse(localStorage.getItem("userData")!);
-    console.log(loggedUser.profile)
-    if(loggedUser.profile == 'aluno') {
-      return true
-    } 
-    return false
+  aluno(){
+    return this.userService.verifyProfile('aluno')
   }
 
   sideBar(){
