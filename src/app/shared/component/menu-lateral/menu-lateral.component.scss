@@ -1,0 +1,57 @@
+div{
+    &.menu-lateral{
+    height: 100%;
+    width: 18rem;
+    background-color: rgb(58, 88, 221);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    border-right: 1.5px solid blue($color: #000000);
+    box-shadow: 3px 3px;
+    section {
+        &#nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            width: 100%;  
+        }
+    }
+    button {
+        &#logout {
+            border-top: 2px solid black;
+            padding-top: 25px;
+        }
+    }
+    } 
+}
+
+button {
+    border-style: none;
+    background: none;
+    text-align: left;
+    margin: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    // width: 95%;
+    &:hover{
+        background: black;
+        color: white;
+    }
+}
+
+.bar-closed {
+    position: absolute;
+    section{
+        &#nav{
+            visibility: hidden;
+        }
+    }
+    button {
+        &#logout {
+            visibility: hidden;
+        }
+}
+}
