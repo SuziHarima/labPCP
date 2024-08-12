@@ -9,19 +9,19 @@
 
         
         <button (click)="sendHome()"> <i class="fa-solid fa-house"></i> Início</button>
-        <ng-template [ngIf]="adminVerification()">
+        <ng-template [ngIf]="admin()">
         <button (click)="sendDocente()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Docente</button> 
         <button (click)="sendAluno()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Aluno</button>   
         </ng-template>
-        <ng-template [ngIf]="adminDocenteVerification()">
+        <ng-template [ngIf]="adminDocente()">
         <button (click)="sendTurma()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Turma</button> 
         <button (click)="sendAvaliacao()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Avaliação</button> 
         </ng-template>
-        <ng-template [ngIf]="adminVerification()">
+        <ng-template [ngIf]="admin()">
         <button (click)="sendDocenteList()"> <i class="fa-solid fa-clipboard"></i> Listagem de Docentes</button>
         </ng-template> 
-        <ng-template [ngIf]="alunoVerification()">
-        <button (click)="sendNotas()">Notas</button>
+        <ng-template [ngIf]="aluno()">
+        <button (click)="sendNotas()"> <i class="fa-solid fa-book"></i> Notas</button>
         </ng-template>
        
     </section>
