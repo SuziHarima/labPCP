@@ -37,16 +37,13 @@ export class UserService {
 
   adminDocenteVerification(): boolean {
     let loggedUser = JSON.parse(localStorage.getItem("userData")!);
-    console.log(loggedUser.profile)
-    if(loggedUser.profile == 'admin' || loggedUser.profile == 'docente') {
-      return true
-    } 
-    return false
+    // console.log(loggedUser.profile)
+    return loggedUser.profile == 'admin' || loggedUser.profile == 'docente'
   }
 
   verifyProfile(profile: string): boolean {
     let loggedUser = JSON.parse(localStorage.getItem("userData")!);
-    console.log(loggedUser.profile)
+    // console.log(loggedUser.profile)
     return loggedUser.profile == profile;
   }
 

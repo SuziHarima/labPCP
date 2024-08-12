@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-tool-bar',
@@ -7,7 +8,14 @@ import { Component } from '@angular/core';
   templateUrl: './tool-bar.component.html',
   styleUrl: './tool-bar.component.scss'
 })
-export class ToolBarComponent {
+export class ToolBarComponent implements OnInit {
 
+  userLog: string | undefined;
+  
+  ngOnInit() {
+    var name = JSON.parse(localStorage.getItem("userData")!);
+    this.userLog = name.login;
+  }
+  
 
 }

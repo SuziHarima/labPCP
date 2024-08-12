@@ -10,7 +10,7 @@ export const routes: Routes = [
     },
     {
         path: 'menu',
-        component: MenuLateralComponent
+        component: ToolBarComponent
     },
     {
         path: 'home',
