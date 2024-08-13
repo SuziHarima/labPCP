@@ -11,6 +11,7 @@ export class AlunoService {
   constructor() {
     this.listaAlunos = [
       {
+        id: 1,
         nome: 'aluno1',
         genero: 'agenero',
         dataNascimento: '01/01/2000',
@@ -24,6 +25,7 @@ export class AlunoService {
         turma:'turma1',
       },
       {
+        id: 2,
         nome: 'aluno2',
         genero: 'agenero',
         dataNascimento: '01/01/2002',
@@ -37,6 +39,7 @@ export class AlunoService {
         turma:'turma2',
       },
       {
+        id: 3,
         nome: 'aluno3',
         genero: 'agenero',
         dataNascimento: '01/01/2001',
@@ -48,7 +51,63 @@ export class AlunoService {
         naturalidade: '',
         endereço: 'rua aluno, bairro aluno',
         turma:'turma2',
-      }
+      },
+      {
+        id: 4,
+        nome: 'aluno4',
+        genero: 'agenero',
+        dataNascimento: '01/01/2001',
+        cpf: '',
+        rg: '',
+        telefone: '95 9898-9898',
+        email: 'aluno4@mail.com',
+        senha: 'aluno4senha',
+        naturalidade: '',
+        endereço: 'rua aluno, bairro aluno',
+        turma:'turma2',
+      },
+      {
+        id: 5,
+        nome: 'aluno5',
+        genero: 'agenero',
+        dataNascimento: '01/01/2001',
+        cpf: '',
+        rg: '',
+        telefone: '95 9898-9898',
+        email: 'aluno5@mail.com',
+        senha: 'aluno5senha',
+        naturalidade: '',
+        endereço: 'rua aluno, bairro aluno',
+        turma:'turma2',
+      },
+      {
+        id: 6,
+        nome: 'aluno6',
+        genero: 'agenero',
+        dataNascimento: '01/01/2001',
+        cpf: '',
+        rg: '',
+        telefone: '96 9898-9898',
+        email: 'aluno6@mail.com',
+        senha: 'aluno6senha',
+        naturalidade: '',
+        endereço: 'rua aluno, bairro aluno',
+        turma:'turma2',
+      },
+      {
+        id: 7,
+        nome: 'aluno7',
+        genero: 'agenero',
+        dataNascimento: '01/01/2001',
+        cpf: '',
+        rg: '',
+        telefone: '98 9898-9898',
+        email: 'aluno7@mail.com',
+        senha: 'aluno7senha',
+        naturalidade: '',
+        endereço: 'rua aluno, bairro aluno',
+        turma:'turma2',
+      },
     ]
    }
 
