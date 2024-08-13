@@ -3,20 +3,21 @@ header{
     height: 3.5rem;
     background: rgb(58, 88, 221);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     gap: 2.5rem;
     h1{
         font-size: 2rem;
         color: white;
-        margin: 0px 0px 0px 3rem;
+        position: relative;
+        margin: 0px 0px 0px 5rem;
     }
     div{
         span{
             margin-right: 8px;
         }
         i{
-            margin-right: 8px;
+            margin-right: 28px;
         }
     }
 }

@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em;
+    border: 0px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 13em;
+    width: 15em;
+    &:hover{
+        scale: 1.1;
+    }
+}

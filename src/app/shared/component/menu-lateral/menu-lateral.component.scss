@@ -1,13 +1,15 @@
 div{
     &.menu-lateral{
-    height: 100%;
+    height: 100vh;
     width: 18rem;
     background-color: rgb(58, 88, 221);
     position: absolute;
+    top: 0%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 8px;
+    border-radius: 8px;
     border-right: 1.5px solid blue($color: #000000);
     box-shadow: 3px 3px;
     section {
@@ -44,6 +46,7 @@ button {
 
 .bar-closed {
     position: absolute;
+    top: 0%;
     section{
         &#nav{
             visibility: hidden;
