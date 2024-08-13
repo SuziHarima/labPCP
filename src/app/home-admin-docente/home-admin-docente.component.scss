@@ -1,11 +1,29 @@
-.container-cards {
-    margin-top: 25px;
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-around;
-    width: 100vw;
-    height: 100vh;
+@mixin display-flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-statistics{
+  @include display-flex-center;
+  margin: 2rem;
+  div{
+    &.statistic-card{
+    @include display-flex-center;
+    flex-direction: column;
+    width: 9rem;
+    height: 8rem;
+    padding: 5px;
+    box-shadow: 3px 3px;
+    border-radius: 5px;
+    margin: 10px;
+    background:  #cae5fd;
+    }
+    span{
+      font-size: 24px;
+    }
   }
+}
 
 .search-bar {
     width: 80vw;
@@ -35,3 +53,13 @@
       }
     }
   }
+
+.container-cards {
+    margin-top: 25px;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+}
+
