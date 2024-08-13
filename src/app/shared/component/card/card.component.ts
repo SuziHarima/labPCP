@@ -18,8 +18,7 @@ export class CardComponent {
   {
     nome: string,
     dataNascimento: string,
-    contato: string;
-    rota: string
+    telefone: string;
   } | undefined;
 
   redirect(){
