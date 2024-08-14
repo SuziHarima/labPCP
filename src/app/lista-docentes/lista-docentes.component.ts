@@ -27,8 +27,10 @@ export class ListaDocentesComponent {
     //   this.listaStatistics[0].numero = this.listaAlunos.length;
     // });
     
-    this.listaDocentes = docenteService.getDocentes();
-    this.listaDocentesPesquisa = this.listaDocentes;
+    docenteService.getDocentes().subscribe((retorno) => {
+      this.listaDocentes = retorno;
+      this.listaDocentesPesquisa = this.listaDocentes;
+    });
   }
 
   admin(){

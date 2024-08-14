@@ -37,9 +37,12 @@ export class HomeAdminDocenteComponent {
       this.listaStatistics[0].numero = this.listaAlunos.length;
     });
     
-    this.listaDocente = docenteService.getDocentes();
-    this.listaTurma = turmaService.getTurmas();
+    docenteService.getDocentes().subscribe((retorno) => {
+      this.listaDocente = retorno;
+      this.listaStatistics[1].numero = this.listaDocente.length;
+    });
 
+    this.listaTurma = turmaService.getTurmas();
 
     this.listaStatistics.push({
       nome: "Alunos",
