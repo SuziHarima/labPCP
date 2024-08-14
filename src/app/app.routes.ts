@@ -5,6 +5,7 @@ import { ToolBarComponent } from './shared/component/tool-bar/tool-bar.component
 import { HomeAdminDocenteComponent } from './home-admin-docente/home-admin-docente.component';
 import { HomeAlunosComponent } from './home-alunos/home-alunos.component';
 import { CardComponent } from './shared/component/card/card.component';
+import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
 
 export const routes: Routes = [
     {
@@ -20,7 +21,7 @@ export const routes: Routes = [
         component: HomeAlunosComponent
     },
     {
-        path: 'card',
-        component: CardComponent
+        path: 'aluno',
+        component: CadastroAlunoComponent
     }
 ];

@@ -1,0 +1,64 @@
+$color-primary: blue;
+
+#form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    // background: peru;
+    form{
+        #button-container{
+            display: flex;
+            justify-content: flex-end;  
+            gap: 2rem;
+            padding: 2rem;
+            // background: plum;
+            button{
+                padding: 10px;
+                border-radius: 5px;
+                width: 6rem;
+                &#edit-bt{
+                    background: grey;
+                }
+                &#delete-bt{
+                    background: rgb(221, 121, 121);
+                }
+                &#save-bt{
+                    background: rgb(131, 234, 131);
+                }
+                &:hover{
+                    color: white;
+                    scale: 1.1;
+                    cursor: pointer;
+                }
+            }
+        }
+        #input-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            width: 100%;
+            // background: blueviolet;
+            div{
+                // background: yellowgreen;
+                margin: 5px;
+                label{
+                    margin-right: 10px;
+                    // background: red;
+                }
+                input{
+                    border-radius: 5px;
+                    // background: wheat;
+                    width: 95%;
+                    height: 1.5rem;
+                    margin-right: 5px;
+                }
+                select{
+                    border-radius: 5px;
+                    width: 95%;
+                    height: 1.5rem;
+                    // background: red;
+                }
+            }
+        }
+    }
+}
