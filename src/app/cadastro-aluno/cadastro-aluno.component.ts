@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormsModule, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { BuscaCepService } from '../shared/services/busca-cep.service';
 import { ActivatedRoute } from '@angular/router';
 import { AlunoService } from '../shared/services/aluno.service';
 import { Aluno } from '../shared/interfaces/aluno.interface';
 import { CommonModule } from '@angular/common';
+import { Turma } from '../shared/interfaces/turma.interface';
+import { TurmaService } from '../shared/services/turma.service';
 
 @Component({
   selector: 'app-cadastro-aluno',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, MatFormFieldModule, MatSelectModule, FormsModule],
   templateUrl: './cadastro-aluno.component.html',
   styleUrl: './cadastro-aluno.component.scss'
 })
@@ -17,8 +21,14 @@ export class CadastroAlunoComponent implements OnInit {
 
   studentRegisterForm!: FormGroup;
   idAluno!: string;
+  listaTurmas: Array<string> = [];
 
   ngOnInit(): void {
+    this.turmaService.getTurmas().forEach(
+      (turma) => this.listaTurmas.push(turma.nome)
+    );
+    
+    
     this.studentRegisterForm = new FormGroup({
       nome: new FormControl('', Validators.required),
       genero: new FormControl('', Validators.required ),
@@ -37,7 +47,7 @@ export class CadastroAlunoComponent implements OnInit {
       complemento: new FormControl('', Validators.required),
       bairro: new FormControl('', Validators.required),
       referencia: new FormControl('', Validators.required),
-      turma: new FormControl('', Validators.required)
+      turmas: new FormControl('', Validators.required)
     });
 
     this.idAluno = this.activatedRoute.snapshot.params['id'];
@@ -54,7 +64,9 @@ export class CadastroAlunoComponent implements OnInit {
   constructor(
     private buscaCepService: BuscaCepService, 
     private activatedRoute: ActivatedRoute,
-    private alunoService: AlunoService){}
+    private alunoService: AlunoService,
+    private turmaService: TurmaService
+  ){}
 
   buscarCep() {
     if (this.studentRegisterForm.value.cep) {

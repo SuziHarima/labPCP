@@ -92,7 +92,6 @@
       "turma": "turma2"
     },
     {
-      "id": "26ef",
       "nome": "nome aluno",
       "genero": "feminino",
       "dataNascimento": "10/10/2003",
@@ -110,7 +109,11 @@
       "complemento": "alfajor",
       "bairro": "Centro",
       "referencia": "a",
-      "turma": "2"
+      "turmas": [
+        "turma2",
+        "turma3"
+      ],
+      "id": "26ef"
     }
   ]
 }
