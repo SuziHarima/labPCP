@@ -24,8 +24,8 @@ export class UserService {
       },
       {
         id: 3,
-        login: 'user3',
-        password: 'user3pass',
+        login: 'aluno3@mail.com',
+        password: 'aluno3senha',
         profile: 'aluno',
       }
     ]

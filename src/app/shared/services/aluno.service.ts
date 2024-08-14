@@ -114,4 +114,13 @@ export class AlunoService {
    getAlunos() {
     return this.listaAlunos
    }
+
+   getAlunoIdByUser(user: string): number | undefined {
+     for (let aluno of this.listaAlunos) {
+       if (aluno.email == user) {
+         return aluno.id;
+       }
+     }
+     return undefined;
+   }
 }

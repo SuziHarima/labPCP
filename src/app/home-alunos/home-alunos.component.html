@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<h2>Minhas Avaliações</h2>
+<section class="container-avaliacoes" *ngIf="profile('aluno')">
+    <div *ngFor="let avaliacao of minhasAvaliacoes" >
+		<div class="avaliacao-card" (click)="sendToNotas()">
+			<h3>{{avaliacao.nome}}</h3>
+            <span>{{avaliacao.materia}}</span>
+            <span>{{avaliacao.data}}</span>
+		</div>
+	</div>
+</section>
+
+<h2>Minhas Matérias</h2>
+<section class="container-materias" *ngIf="profile('aluno')">
+    <div *ngFor="let materia of minhasMaterias" >
+		<div class="statistic-card">
+			<span>{{materia.nome}}</span>
+		</div>
+	</div>
+</section>
+
+<h2>Cursos Extras</h2>
+<section class="container-materias" *ngIf="profile('aluno')">
+    <div *ngFor="let curso of cursosExtras" >
+		<div class="statistic-card">
+			<span>{{curso.nome}}</span>
+		</div>
+	</div>
+</section>
