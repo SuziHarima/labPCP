@@ -8,6 +8,8 @@ import { CardComponent } from './shared/component/card/card.component';
 import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
 import { ListaDocentesComponent } from './lista-docentes/lista-docentes.component';
 import { CadastroDocenteComponent } from './cadastro-docente/cadastro-docente.component';
+import { HomeComponent } from './home/home.component';
+
 
 export const routes: Routes = [
     {
@@ -16,11 +18,7 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        component: HomeAdminDocenteComponent
-    },
-    {
-        path: 'home-alunos',
-        component: HomeAlunosComponent
+        component: HomeComponent
     },
     {
         path: 'aluno',
