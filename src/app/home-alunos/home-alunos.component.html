@@ -1,0 +1,17 @@
+<section class="container-materias" *ngIf="profile('aluno')">
+	<h3>Minhas Matérias</h3>
+    <div *ngFor="let materia of minhasMaterias" >
+		<div class="statistic-card">
+			<span>{{materia.nome}}</span>
+		</div>
+	</div>
+</section>
+
+<section class="container-extras" *ngIf="profile('aluno')">
+	<h3>Cursos Extras</h3>
+    <div *ngFor="let curso of cursosExtras" >
+		<div class="statistic-card">
+			<span>{{curso.nome}}</span>
+		</div>
+	</div>
+</section>
