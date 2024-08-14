@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MenuLateralComponent } from './shared/component/menu-lateral/menu-lateral.component';
 import { ToolBarComponent } from './shared/component/tool-bar/tool-bar.component';
+import { HomeAdminDocenteComponent } from './home-admin-docente/home-admin-docente.component';
+import { CardComponent } from './shared/component/card/card.component';
 
 export const routes: Routes = [
     {
@@ -9,11 +11,11 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'menu',
-        component: ToolBarComponent
+        path: 'home',
+        component: HomeAdminDocenteComponent
     },
     {
-        path: 'home',
-        component: LoginComponent
+        path: 'card',
+        component: CardComponent
     }
 ];

@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em;
+    border: 0px;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    height: 9em;
+    width: 7em;
+    background: #cae5fd;
+    border-radius: 8px;
+    box-shadow: 3px 3px;
+    &:hover{
+        scale: 1.1;
+    }
+    button{
+        background: #cae5fd;
+        cursor: pointer;
+        margin-top: 8px;
+        border: none;
+    }
+}
