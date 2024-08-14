@@ -2,6 +2,7 @@
 
 <h2>Listagem de Docentes</h2>
 
+<div *ngIf="admin()">
 <div class="search-bar">
     <input type="text" name="pesquisa" [(ngModel)]="textoPesquisa">
     <button (click)="pesquisar()"><i class="fa-solid fa-magnifying-glass"></i> </button>
@@ -11,4 +12,5 @@
 	<div *ngFor="let docente of listaDocentesPesquisa">
 		<app-card [element]="docente" [isDocente]="true"></app-card>
 	</div>
+</div>
 </div>
