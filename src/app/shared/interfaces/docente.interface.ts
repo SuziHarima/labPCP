@@ -1,5 +1,5 @@
 export class Docente {
-    id: number;
+    id: string;
     nome: string;
     genero: string;
     dataNascimento: string;
@@ -13,7 +13,7 @@ export class Docente {
     endereço: string;
     materias:string;
 
-    constructor(id:number, nome: string, genero:string, dataNascimento:string, cpf:string, rg:string, estadoCivil:string, telefone:string, email:string, senha:string, naturalidade:string, endereco:string, materias:string){
+    constructor(id:string, nome: string, genero:string, dataNascimento:string, cpf:string, rg:string, estadoCivil:string, telefone:string, email:string, senha:string, naturalidade:string, endereco:string, materias:string){
         this.id = id;
         this.nome = nome;
         this.genero = genero;

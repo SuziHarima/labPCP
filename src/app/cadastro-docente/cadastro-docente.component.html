@@ -1,0 +1,125 @@
+<div id="form-container" *ngIf="admin()">
+    <form [formGroup]="docenteRegisterForm">
+        <section id="button-container">
+            <button id="edit-bt" (click)="edit()" [disabled]="idDocente == undefined">Editar</button>
+            <button id="delete-bt" (click)="deleteDocente()" [disabled]="idDocente == undefined">Deletar</button>
+            <button id="save-bt" (click)="save()">Salvar</button>
+        </section>
+
+        <section id="input-container">
+            <div>
+                <label for="nome">Nome Completo * </label>
+                <input type="text" name="nome" formControlName="nome">
+                <span *ngIf="(docenteRegisterForm.controls['nome'].dirty || docenteRegisterForm.controls['nome'].touched) &&
+                docenteRegisterForm.controls['nome'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="genero">Gênero * </label>
+                <select name="genero" id="genero" formControlName="genero">
+                    <option value="feminino">Feminino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="agenero">Agenero</option>
+                    <option value="naoinformar">Prefiro não informar</option>
+                </select>
+                <span *ngIf="(docenteRegisterForm.controls['genero'].dirty || docenteRegisterForm.controls['genero'].touched) &&
+                docenteRegisterForm.controls['genero'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="dataNascimento">Data de Nascimento * </label>
+                <input type="text" name="dataNascimento" formControlName="dataNascimento">
+                <span *ngIf="(docenteRegisterForm.controls['dataNascimento'].dirty || docenteRegisterForm.controls['dataNascimento'].touched) &&
+                docenteRegisterForm.controls['dataNascimento'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="cpf">CPF * </label>
+                <input type="text" name="cpf" formControlName="cpf">
+                <span *ngIf="(docenteRegisterForm.controls['cpf'].dirty || docenteRegisterForm.controls['cpf'].touched) &&
+                docenteRegisterForm.controls['cpf'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="rg">RG * </label>
+                <input type="text" name="rg" formControlName="rg">
+                <span *ngIf="(docenteRegisterForm.controls['rg'].dirty || docenteRegisterForm.controls['rg'].touched) &&
+                docenteRegisterForm.controls['rg'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="telefone">Telefone * </label>
+                <input type="text" name="telefone" formControlName="telefone">
+                <span *ngIf="(docenteRegisterForm.controls['telefone'].dirty || docenteRegisterForm.controls['telefone'].touched) &&
+                docenteRegisterForm.controls['telefone'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="email">e-mail</label>
+                <input type="text" name="email" formControlName="email">
+            </div>
+            <div>
+                <label for="senha">Senha * </label>
+                <input type="password" name="senha" formControlName="senha">
+                <span *ngIf="(docenteRegisterForm.controls['senha'].dirty || docenteRegisterForm.controls['senha'].touched) &&
+                docenteRegisterForm.controls['senha'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="naturalidade">Naturalidade * </label>
+                <input type="text" name="naturalidade" formControlName="naturalidade">
+                <span *ngIf="(docenteRegisterForm.controls['naturalidade'].dirty || docenteRegisterForm.controls['naturalidade'].touched) &&
+                docenteRegisterForm.controls['naturalidade'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+
+            <div>
+                <label for="cep">CEP * </label>
+                <input type="text" name="cep" formControlName="cep" (blur)="buscarCep()">
+                <span *ngIf="(docenteRegisterForm.controls['cep'].dirty || docenteRegisterForm.controls['cep'].touched) &&
+                docenteRegisterForm.controls['cep'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="cidade">Cidade * </label>
+                <input type="text" name="cidade" formControlName="localidade">
+                <span *ngIf="(docenteRegisterForm.controls['localidade'].dirty || docenteRegisterForm.controls['localidade'].touched) &&
+                docenteRegisterForm.controls['localidade'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="estado">Estado * </label>
+                <input type="text" name="estado" formControlName="uf">
+                <span *ngIf="(docenteRegisterForm.controls['uf'].dirty || docenteRegisterForm.controls['uf'].touched) &&
+                docenteRegisterForm.controls['uf'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="logradouro">logradouro * </label>
+                <input type="text" name="logradouro" formControlName="logradouro">
+                <span *ngIf="(docenteRegisterForm.controls['logradouro'].dirty || docenteRegisterForm.controls['logradouro'].touched) &&
+                docenteRegisterForm.controls['logradouro'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="numero">Número * </label>
+                <input type="text" name="numero" formControlName="numero">
+                <span *ngIf="(docenteRegisterForm.controls['numero'].dirty || docenteRegisterForm.controls['numero'].touched) &&
+                docenteRegisterForm.controls['numero'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="complemento">Complemento</label>
+                <input type="text" name="complemento" formControlName="complemento">
+            </div>
+            <div>
+                <label for="bairro">Bairro * </label>
+                <input type="text" name="bairro" formControlName="bairro">
+                <span *ngIf="(docenteRegisterForm.controls['bairro'].dirty || docenteRegisterForm.controls['bairro'].touched) &&
+                docenteRegisterForm.controls['bairro'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                 <label for="referencia">Ponto de Referência</label>
+                 <input type="text" name="referencia" formControlName="referencia">
+            </div>
+            <div>
+                <mat-form-field>
+                    <mat-label>Matérias </mat-label>
+                    <mat-select formControlName="materias" multiple>
+                      @for (materia of listaMaterias; track materia) {
+                        <mat-option [value]="materia">{{materia}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+
+        </section>
+    </form>
+</div>

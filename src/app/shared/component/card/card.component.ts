@@ -13,6 +13,8 @@ export class CardComponent {
   constructor(private router: Router){}
 
   @Input() isAdmin: boolean | undefined;
+
+  @Input() isDocente: boolean | undefined;
   
   @Input() element: 
   {
@@ -23,7 +25,10 @@ export class CardComponent {
   } | undefined;
 
   redirect(){
-    if(this.isAdmin) {
+    if(this.isDocente) {
+      this.router.navigate([`/docente/${this.element?.id}`])
+    }
+    else if(this.isAdmin) {
       this.router.navigate([`/aluno/${this.element?.id}`])
     } else {
       this.router.navigate(['/nota'])
