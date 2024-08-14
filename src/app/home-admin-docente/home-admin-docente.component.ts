@@ -31,7 +31,12 @@ export class HomeAdminDocenteComponent {
     private docenteService: DocenteService, 
     private turmaService: TurmaService){
     
-    this.listaAlunos = alunoService.getAlunos();
+    alunoService.getAlunos().subscribe((retorno) => {
+      this.listaAlunos = retorno;
+      this.listaAlunosPesquisa = this.listaAlunos;
+      this.listaStatistics[0].numero = this.listaAlunos.length;
+    });
+    
     this.listaDocente = docenteService.getDocentes();
     this.listaTurma = turmaService.getTurmas();
 
