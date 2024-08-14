@@ -6,6 +6,8 @@ import { HomeAdminDocenteComponent } from './home-admin-docente/home-admin-docen
 import { HomeAlunosComponent } from './home-alunos/home-alunos.component';
 import { CardComponent } from './shared/component/card/card.component';
 import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
+import { ListaDocentesComponent } from './lista-docentes/lista-docentes.component';
+import { CadastroDocenteComponent } from './cadastro-docente/cadastro-docente.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +29,18 @@ export const routes: Routes = [
     {
         path:'aluno/:id',
         component: CadastroAlunoComponent
+    },
+    {
+        path:'docentes',
+        component: ListaDocentesComponent
+    },
+    {
+        path:'docente',
+        component: CadastroDocenteComponent
+    },
+    {
+        path:'docente/:id',
+        component: CadastroDocenteComponent
     },
     {
         path: '**',

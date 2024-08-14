@@ -10,7 +10,7 @@ export class DocenteService {
   constructor() {
     this.listaDocentes = [
       {
-        id: 1,
+        id: '1',
         nome: 'docente1',
         genero: '',
         dataNascimento: '',
@@ -25,7 +25,7 @@ export class DocenteService {
         materias:''
       },
       {
-        id: 2,
+        id: '2',
         nome: 'docente2',
         genero: '',
         dataNascimento: '',
@@ -40,7 +40,7 @@ export class DocenteService {
         materias:''
       },
       {
-        id: 3,
+        id: '3',
         nome: 'docente3',
         genero: '',
         dataNascimento: '',
@@ -55,7 +55,7 @@ export class DocenteService {
         materias:''
       },
       {
-        id: 4,
+        id: '4',
         nome: 'docente4',
         genero: '',
         dataNascimento: '',
@@ -70,7 +70,7 @@ export class DocenteService {
         materias:''
       },
       {
-        id: 5,
+        id: '5',
         nome: 'docente5',
         genero: '',
         dataNascimento: '',
