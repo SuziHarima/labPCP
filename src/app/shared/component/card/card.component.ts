@@ -16,6 +16,7 @@ export class CardComponent {
   
   @Input() element: 
   {
+    id:string,
     nome: string,
     dataNascimento: string,
     telefone: string;
@@ -23,7 +24,7 @@ export class CardComponent {
 
   redirect(){
     if(this.isAdmin) {
-      this.router.navigate(['/aluno'])
+      this.router.navigate([`/aluno/${this.element?.id}`])
     } else {
       this.router.navigate(['/nota'])
     }

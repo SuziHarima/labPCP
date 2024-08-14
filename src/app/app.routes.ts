@@ -23,5 +23,13 @@ export const routes: Routes = [
     {
         path: 'aluno',
         component: CadastroAlunoComponent
+    },
+    {
+        path:'aluno/:id',
+        component: CadastroAlunoComponent
+    },
+    {
+        path: '**',
+        redirectTo: 'login'
     }
 ];

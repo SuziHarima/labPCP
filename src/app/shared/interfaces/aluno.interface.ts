@@ -1,5 +1,5 @@
 export class Aluno {
-    id: number;
+    id: string;
     nome: string;
     genero: string;
     dataNascimento: string;
@@ -12,7 +12,7 @@ export class Aluno {
     endereço: string;
     turma:string;
 
-    constructor(id:number, nome: string, genero:string, dataNascimento:string, cpf:string, rg:string, telefone:string, email:string, senha:string, naturalidade:string, endereco:string, turma:string){
+    constructor(id:string, nome: string, genero:string, dataNascimento:string, cpf:string, rg:string, telefone:string, email:string, senha:string, naturalidade:string, endereco:string, turma:string){
         this.id = id;
         this.nome = nome;
         this.genero = genero;
