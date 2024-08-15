@@ -9,6 +9,7 @@ import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.componen
 import { ListaDocentesComponent } from './lista-docentes/lista-docentes.component';
 import { CadastroDocenteComponent } from './cadastro-docente/cadastro-docente.component';
 import { HomeComponent } from './home/home.component';
+import { NotasComponent } from './notas/notas.component';
 
 
 export const routes: Routes = [
@@ -29,6 +30,10 @@ export const routes: Routes = [
         component: CadastroAlunoComponent
     },
     {
+        path:'notas',
+        component: NotasComponent
+    },
+    {
         path:'docentes',
         component: ListaDocentesComponent
     },
@@ -44,4 +49,5 @@ export const routes: Routes = [
         path: '**',
         redirectTo: 'login'
     }
+
 ];
