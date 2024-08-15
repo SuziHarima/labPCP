@@ -1,48 +1,45 @@
 import { Injectable } from '@angular/core';
 import { Avaliacao } from '../interfaces/avaliacao.interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AvaliacaoService {
-  listaAvaliacoes: Array<Avaliacao>;
+  filteredList: Array<Avaliacao> = [];
+  url = 'http://localhost:3000/avaliacoes';
 
-  constructor() {
-    this.listaAvaliacoes = [
-      {
-        id: 1,
-        idAluno: 3,
-        nome: 'Teste AV1',
-        data: '12/03/2024',
-        materia: 'Matemática',
-        nota: 8,
-      },
-      {
-        id: 2,
-        idAluno: 3,
-        nome: 'Teste AV2',
-        data: '12/04/2024',
-        materia: 'Matemática',
-        nota: 7,
-      },
-      {
-        id: 3,
-        idAluno: 3,
-        nome: 'Seminário',
-        data: '12/05/2024',
-        materia: 'História',
-        nota: 10,
-      }
-    ]
+  constructor(private httpClient: HttpClient) {
+  }
+  
+  getAvaliacoes() {
+    return this.httpClient.get<Array<Avaliacao>>(this.url);
   }
 
-  getAvaliacoes(idAluno: number) {
-    let filtered: Array<Avaliacao> = [];
-    for (let avaliacao of this.listaAvaliacoes) {
-      if (avaliacao.idAluno == idAluno) {
-        filtered.push(avaliacao);
-      }
-    }
-    return filtered;
+  getAvaliacao(id: string) {
+    return this.httpClient.get<Avaliacao>(this.url + `/${id}`);
   }
+  
+  postAvaliacao(avaliacao: Avaliacao) {
+    return this.httpClient.post<any>(this.url, avaliacao);
+  }
+  
+  putAvaliacao(avaliacao: Avaliacao) {
+    return this.httpClient.put<any>(this.url + `/${avaliacao.id}`, avaliacao);
+  }
+  
+  deleteAvaliacao(id: string) {
+    return this.httpClient.delete<any>(this.url + `/${id}`);
+  }
+
+  getAvaliacoesByAluno(idAluno: number) {
+    this.httpClient.get<Array<Avaliacao>>(this.url + `?idAluno=${idAluno}`).subscribe(
+      (retorno) => {
+        this.filteredList = retorno;
+      }
+    );
+    return this.filteredList;
+  }
+
+  
 }
