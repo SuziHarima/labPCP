@@ -36,7 +36,10 @@ export class HomeAlunosComponent implements OnInit {
     let idAluno = this.alunoService.getAlunoIdByUser(loggedUser.login)
 
     if (idAluno) {
-      this.minhasAvaliacoes = this.avaliacaoService.getAvaliacoes(idAluno);
+      this.avaliacaoService.getAvaliacoes().subscribe(
+        (retorno) => {
+          this.minhasAvaliacoes = retorno;
+        });
     }
     
     this.minhasMaterias = [
