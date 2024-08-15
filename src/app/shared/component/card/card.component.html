@@ -5,5 +5,5 @@
     <h3>{{ element?.nome }}</h3>
     <span>{{ element?.dataNascimento}}</span>
     <span>{{ element?.telefone }}</span>
-    <button (click)="redirect()">{{ isAdmin ? 'Ver Mais' : 'Lançar Nota' }}</button>
+    <button (click)="redirect()">{{ isAdmin || isDocente ? 'Ver Mais' : 'Lançar Nota' }}</button>
 </div>

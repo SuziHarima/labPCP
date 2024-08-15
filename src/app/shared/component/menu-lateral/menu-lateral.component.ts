@@ -42,7 +42,7 @@ export class MenuLateralComponent {
   }
   
   sendDocenteList(){
-    this.router.navigate(['/docent-list'])
+    this.router.navigate(['/docentes'])
   }
   
   sendNotas(){
