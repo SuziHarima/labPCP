@@ -7,6 +7,7 @@ import { HomeAlunosComponent } from './home-alunos/home-alunos.component';
 import { CardComponent } from './shared/component/card/card.component';
 import { CadastroAlunoComponent } from './cadastro-aluno/cadastro-aluno.component';
 import { HomeComponent } from './home/home.component';
+import { NotasComponent } from './notas/notas.component';
 
 export const routes: Routes = [
     {
@@ -26,7 +27,12 @@ export const routes: Routes = [
         component: CadastroAlunoComponent
     },
     {
+        path:'notas',
+        component: NotasComponent
+    },
+    {
         path: '**',
         redirectTo: 'login'
     }
+
 ];
