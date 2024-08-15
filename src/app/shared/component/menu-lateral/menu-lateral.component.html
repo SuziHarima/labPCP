@@ -1,0 +1,31 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="bar-closed">
+    <button id="toogler" (click)="sideBar()"> <i class="fa-solid fa-bars"></i></button>
+
+    <section id="nav">
+
+        
+        <button (click)="sendHome()"> <i class="fa-solid fa-house"></i> Início</button>
+        <ng-template [ngIf]="admin()">
+        <button (click)="sendDocente()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Docente</button> 
+        <button (click)="sendAluno()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Aluno</button>   
+        </ng-template>
+        <ng-template [ngIf]="adminDocente()">
+        <button (click)="sendTurma()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Turma</button> 
+        <button (click)="sendAvaliacao()"> <i class="fa-solid fa-pen-to-square"></i> Cadastro de Avaliação</button> 
+        </ng-template>
+        <ng-template [ngIf]="admin()">
+        <button (click)="sendDocenteList()"> <i class="fa-solid fa-clipboard"></i> Listagem de Docentes</button>
+        </ng-template> 
+        <ng-template [ngIf]="aluno()">
+        <button (click)="sendNotas()"> <i class="fa-solid fa-book"></i> Notas</button>
+        </ng-template>
+       
+    </section>
+
+    <button (click)="logout()" id="logout"> <i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+
+</div>

@@ -1,0 +1,49 @@
+<div id="form-container">
+    <form [formGroup]="avaliacaoRegisterForm">
+        <section id="button-container">
+            <button id="edit-bt" (click)="edit()" [disabled]="idAvaliacao == undefined">Editar</button>
+            <button id="delete-bt" (click)="deleteAvaliacao()" [disabled]="idAvaliacao == undefined">Deletar</button>
+            <button id="save-bt" (click)="save()">Salvar</button>
+        </section>
+
+        <section id="input-container">
+            <div>
+                <label for="nome">Nome da Avaliação * </label>
+                <input type="text" name="nome" formControlName="nome">
+                <span *ngIf="(avaliacaoRegisterForm.controls['nome'].dirty || avaliacaoRegisterForm.controls['nome'].touched) &&
+                avaliacaoRegisterForm.controls['nome'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="professor">Professor * </label>
+                <select name="professor" id="professor" formControlName="professor"*ngFor="let docente of listaDocentes">
+                    <option [value]="docente">{{docente}}</option>
+                </select>
+                <span *ngIf="(avaliacaoRegisterForm.controls['professor'].dirty || avaliacaoRegisterForm.controls['professor'].touched) &&
+                avaliacaoRegisterForm.controls['professor'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="materia">Matéria * </label>
+                <select name="materia" id="materia" formControlName="materia"*ngFor="let materia of listaMaterias">
+                    <option [value]="materia">{{materia}}</option>
+                </select>
+                <span *ngIf="(avaliacaoRegisterForm.controls['materia'].dirty || avaliacaoRegisterForm.controls['materia'].touched) &&
+                avaliacaoRegisterForm.controls['materia'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="data">Data da Avaliação * </label>
+                <input type="text" name="data" formControlName="data">
+                <span *ngIf="(avaliacaoRegisterForm.controls['data'].dirty || avaliacaoRegisterForm.controls['data'].touched) &&
+                avaliacaoRegisterForm.controls['data'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+            <div>
+                <label for="aluno">Aluno * </label>
+                <select name="aluno" id="aluno" formControlName="aluno"*ngFor="let aluno of listaAlunos">
+                    <option [value]="aluno">{{aluno}}</option>
+                </select>
+                <span *ngIf="(avaliacaoRegisterForm.controls['aluno'].dirty || avaliacaoRegisterForm.controls['aluno'].touched) &&
+                avaliacaoRegisterForm.controls['aluno'].errors?.['required']" class="label-error">Campo obrigatório*</span>
+            </div>
+        </section>
+    </form>
+</div>
+

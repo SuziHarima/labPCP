@@ -1,0 +1,25 @@
+h1{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5rem;
+    text-shadow: 3px 3px #cae5fd;
+}
+
+#container-notas{
+    display: grid;
+    background: red;
+    margin-top: 20px;
+    #cabecalho{
+        display: grid;
+        text-align: center;
+        grid-template-columns: repeat(5, 1fr);
+        background: blue;
+    }
+    #avaliacoes{
+        display: grid;
+        text-align: center;
+        row-gap: 8px;
+        grid-template-columns: repeat(5, 1fr);
+        background: chocolate;
+    }
+}
