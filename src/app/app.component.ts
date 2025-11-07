@@ -4,11 +4,12 @@ import { MenuLateralComponent } from "./shared/component/menu-lateral/menu-later
 import { ToolBarComponent } from "./shared/component/tool-bar/tool-bar.component";
 import { filter } from 'rxjs/operators';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from "./shared/component/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MenuLateralComponent, ToolBarComponent, CommonModule],
+  imports: [RouterOutlet, MenuLateralComponent, ToolBarComponent, CommonModule, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
