@@ -1,0 +1,21 @@
+footer{
+    width: 100vw;
+    height: 3rem;
+    background: #003566;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    color: #ade8f4;
+    font-size: small;
+    a{
+        margin-right: 28px;
+        color: #ade8f4;
+        text-decoration: none; 
+        &:hover{
+            color: whitesmoke;
+        }
+    }
+   
+}
